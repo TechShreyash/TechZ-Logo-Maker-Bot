@@ -5,7 +5,6 @@ import re
 from pyrogram import filters, idle
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from main import app
-from main.modules import ALL_MODULES
 import uvloop
 
 loop = asyncio.get_event_loop()
