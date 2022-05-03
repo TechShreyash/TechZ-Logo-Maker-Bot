@@ -14,4 +14,4 @@ async def generate_logo(text: str, square: Optional[bool] = None ):
     response = await ses.get(url)
     
   img_url = response.url
-  return img_url
+  return str(img_url)
