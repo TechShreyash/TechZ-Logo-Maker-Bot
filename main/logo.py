@@ -16,7 +16,7 @@ async def generate_logo(text: str, square: Optional[bool] = False ):
     async with aiohttp.ClientSession() as session: 
       async with session.get(url) as resp:  
         img_url = resp.url
-    except Exception as e:
-      return "error" + str(e)
+  except Exception as e:
+    return "error" + str(e)
       
   return str(img_url)
