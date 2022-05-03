@@ -1,12 +1,12 @@
-import asyncio
-from inspect import getfullargspec
-from pyrogram import Client
-from pyrogram.types import Message
+from program import Client
 from config import *
 
-loop = asyncio.get_event_loop()
+app = Client(
+  "bot",
+  api_id=API_ID,
+  api_hash=API_HASH,
+  bot_token=TOKEN
+)
 
-app = Client("main", bot_token=BOT_TOKEN, api_id=API_ID, api_hash=API_HASH)
-
-print("[INFO]: STARTING BOT CLIENT")
+print("STARTING BOT")
 app.start()

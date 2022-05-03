@@ -1,4 +1,4 @@
-aiohttp
 pyrogram
 TgCrypto
-uvloop
+aiohttp
+python-dotenv
