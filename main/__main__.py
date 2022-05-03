@@ -57,10 +57,10 @@ async def logo(bot, message):
     return await message.reply_text("`❌ Something Went Wrong...`\n\nReport This Error In @TechZBots_Support")
 
 # Square Logo
-@app.on_message(filters.command("logo"))
+@app.on_message(filters.command("logosq"))
 async def logo(bot, message):
   try:
-    text = message.text.replace("logo","").replace("/","").replace("@TechZLogoMakerBot","").strip().upper()
+    text = message.text.replace("logosq","").replace("/","").replace("@TechZLogoMakerBot","").strip().upper()
       
     if text == "":
       return await message.reply_text(HELP)
