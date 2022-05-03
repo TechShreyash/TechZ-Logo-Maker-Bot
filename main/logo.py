@@ -1,4 +1,4 @@
-from main import ses, LOGO_API_URL1, LOGO_API_URL2
+from main import LOGO_API_URL1, LOGO_API_URL2
 from typing import Optional
 
 async def generate_logo(text: str, square: Optional[bool] = None ):
@@ -8,10 +8,11 @@ async def generate_logo(text: str, square: Optional[bool] = None ):
   
   if square == "True":
     url = LOGO_API_URL2 + text
-    response = await ses.get(url)
   else:
     url = LOGO_API_URL1 + text
-    response = await ses.get(url)
-    
-  img_url = response.url
+  
+  async with aiohttp.ClientSession() as session: 
+    async with session.get(url) as resp:  
+      img_url = resp.url
+      
   return str(img_url)

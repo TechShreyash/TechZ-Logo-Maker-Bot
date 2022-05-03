@@ -1,6 +1,5 @@
 from pyrogram import Client
 from config import *
-import aiohttp
 
 app = Client(
   "bot",
