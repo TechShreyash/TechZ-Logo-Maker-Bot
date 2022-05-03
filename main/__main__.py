@@ -92,3 +92,7 @@ async def logo_doc(_,query):
 
 if __name__ == "__main__":
   idle()
+
+print("==================================")
+print("[INFO]: LOGO MAKER BOT STARTED BOT")
+print("==========JOIN @TECHZBOTS=========")
