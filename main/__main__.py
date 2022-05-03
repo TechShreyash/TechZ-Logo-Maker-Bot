@@ -37,7 +37,7 @@ async def logo(bot, message):
     return await message.reply_text(HELP)
 
   x = await message.reply_text("`🔍 Generating Logo For You...`")  
-  logo = await generate_logo()
+  logo = await generate_logo(text)
 
   if "telegra.ph" not in logo:
     return await x.edit("`❌ Something Went Wrong...`\n\nReport This Error In @TechZBots_Support")
@@ -55,7 +55,7 @@ async def sqlogo(bot, message):
     return await message.reply_text(HELP)
 
   x = await message.reply_text("`🔍 Generating Logo For You...`")  
-  logo = await generate_logo()
+  logo = await generate_logo(text,True)
 
   if "telegra.ph" not in logo:
     return await x.edit("`❌ Something Went Wrong...`\n\nReport This Error In @TechZBots_Support")
