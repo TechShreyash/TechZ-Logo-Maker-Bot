@@ -59,7 +59,7 @@ async def logo(bot, message):
     return await message.reply_text("`❌ Something Went Wrong...`\n\nReport This Error In @TechZBots_Support")
 
 # Square Logo
-@app.on_message(filters.command("logosq") & filters.incoming & filters.text & ~filters.forwarded (
+@app.on_message(filters.command("logosq") & filters.incoming & filters.text & ~filters.forwarded & (
   filters.group | filters.private))
 async def logo(bot, message):
   try:
