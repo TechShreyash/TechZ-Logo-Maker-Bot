@@ -1,3 +1,4 @@
+import aiohttp
 from pyrogram import Client
 from config import *
 
@@ -10,3 +11,6 @@ app = Client(
 
 print("[INFO]: STARTING BOT...")
 app.start()
+
+print("[INFO]: STARTING AIOHTTP CLIENT")
+session = aiohttp.ClientSession()

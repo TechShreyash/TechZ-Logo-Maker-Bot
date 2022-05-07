@@ -1,4 +1,4 @@
-from main import LOGO_API_URL1, LOGO_API_URL2
+from main import LOGO_API_URL1, LOGO_API_URL2, session
 from typing import Optional
 import aiohttp
 
@@ -13,9 +13,8 @@ async def generate_logo(text: str, square: Optional[bool] = False ):
     else:
       url = LOGO_API_URL1 + text
   
-    async with aiohttp.ClientSession() as session: 
-      async with session.get(url) as resp:  
-        img_url = resp.url
+    resp = await session.get(url)  
+    img_url = resp.url
   except Exception as e:
     return "error" + str(e)
       
