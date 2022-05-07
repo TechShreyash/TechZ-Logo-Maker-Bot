@@ -23,11 +23,11 @@ HELP = """
 """
 
 # Commands
-@app.on_message(filters.command("start"))
+@app.on_message(filters.command("lgstart"))
 async def start(bot, message):
   await message.reply_photo("https://telegra.ph/file/7a98ead33e7b99fd82cc7.jpg",caption=START,reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Help", callback_data="help_menu"), InlineKeyboardButton(text="Repo", url="https://github.com/TechShreyash/TechZ-Logo-Maker-Bot")]]))
 
-@app.on_message(filters.command("help"))
+@app.on_message(filters.command("lghelp"))
 async def help(bot, message):
   await message.reply_photo("https://telegra.ph/file/7a98ead33e7b99fd82cc7.jpg",caption=HELP,reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Back", callback_data="start_menu")]]))
 
