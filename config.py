@@ -11,6 +11,6 @@ API_HASH = getenv("API_HASH")
 BOT_TOKEN = getenv("BOT_TOKEN")
 
 # API By TechZBots || https://t.me/TechZBots
-LOGO_API_URL1 = "https://techzbotsapi.herokuapp.com/logo?text="
+WALL_API = "https://techzbotsapi.herokuapp.com/wall?query="
 
-LOGO_API_URL2 = "https://techzbotsapi.herokuapp.com/logo?square=true&text="
+UNSPLASH_API = "https://techzbotsapi.herokuapp.com/unsplash?query="
