@@ -3,12 +3,10 @@ import pyrogram
 from pyrogram import filters, idle
 from pyrogram.errors import FloodWait
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message, CallbackQuery
-from main.wall import generate_logo
+from main.logo import generate_logo
 
 START = """
-**🔮 Hello There, You Can Use Me To Download HD Wallpapers...**
-
-__High Quality Wallpapers From (http://wall.alphacoders.com) And (http://unsplash.com)__
+**🔮 Hello There, You Can Use Me To Create Awesome Logos...**
 
 ➤ Click /help Or The Button Below To Know How To Use Me
 """
@@ -16,28 +14,26 @@ __High Quality Wallpapers From (http://wall.alphacoders.com) And (http://unsplas
 HELP = """
 **🖼 How To Use Me ?**
 
-**To Download Wallpapers -** `/wall <search>`
-**To Download Wallpapers From Unsplash - ** `/unsplash <search>`
+**To Make Logo -** `/logo Your Name`
+**To Make Square Logo - ** `/logosq Your Name`
 
 **♻️ Example:** 
-`/wall anime`
-`/unsplash cat`
+`/logo TechZBots`
+`/logosq TechZBots`
 """
 
 # Commands
 @app.on_message(filters.command("start"))
-async def start(bot, message: Message):
-  # await message.reply_photo("https://telegra.ph/file/7a98ead33e7b99fd82cc7.jpg",caption=START,reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Help", callback_data="help_menu"), InlineKeyboardButton(text="Repo", url="https://github.com/TechShreyash/TechZ-Logo-Maker-Bot")]]))
-  await message.reply_text(START,reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Help", callback_data="help_menu"), InlineKeyboardButton(text="Repo", url="https://github.com/TechShreyash/TechZ-Logo-Maker-Bot")]]))
+async def start(bot, message):
+  await message.reply_photo("https://telegra.ph/file/7a98ead33e7b99fd82cc7.jpg",caption=START,reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Help", callback_data="help_menu"), InlineKeyboardButton(text="Repo", url="https://github.com/TechShreyash/TechZ-Logo-Maker-Bot")]]))
 
 @app.on_message(filters.command("help"))
-async def help(bot, message: Message):
-  # await message.reply_photo("https://telegra.ph/file/7a98ead33e7b99fd82cc7.jpg",caption=HELP,reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Back", callback_data="start_menu")]]))
-  await message.reply_text(HELP,reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Back", callback_data="start_menu")]]))
+async def help(bot, message):
+  await message.reply_photo("https://telegra.ph/file/7a98ead33e7b99fd82cc7.jpg",caption=HELP,reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Back", callback_data="start_menu")]]))
 
-@app.on_message(filters.command("wall") & filters.incoming & filters.text & ~filters.forwarded & (
+@app.on_message(filters.command("logo") & filters.incoming & filters.text & ~filters.forwarded & (
   filters.group | filters.private))
-async def logo(bot, message: Message):
+async def logo(bot, message):
   try:
     text = message.text.replace("logo","").replace("/","").replace("@TechZLogoMakerBot","").strip().upper()
     
@@ -133,8 +129,8 @@ async def logo_doc(_,query):
 
 if __name__ == "__main__":
   print("==================================")
-  print("[INFO]: WALLPAPER BOT STARTED BOT SUCCESSFULLY")
+  print("[INFO]: LOGO MAKER BOT STARTED BOT SUCCESSFULLY")
   print("==========JOIN @TECHZBOTS=========")
 
   idle()
-  print("[INFO]: WALLPAPER BOT STOPPED")
+  print("[INFO]: LOGO MAKER BOT STOPPED")
