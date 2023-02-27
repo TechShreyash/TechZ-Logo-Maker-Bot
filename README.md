@@ -1,4 +1,4 @@
-<p align="center"><a href="https://github.com/Tellybots/Uploader-Bot"><img src="https://telegra.ph/file/7a98ead33e7b99fd82cc7.jpg"></a></p> 
+<p align="center"><a href="https://github.com/Tellybots/Uploader-Bot"><img src="https://camo.githubusercontent.com/c08e08134b5f7da66f22596dc74952e2a0da071f170aa78d8fff88c8280f3680/68747470733a2f2f74656c656772612e70682f66696c652f3761393865616433336537623939666438326363372e6a7067"></a></p> 
 
 <h1 align="center"><b>Logo-Maker-Bot</b></h1>
 <h4 align="center"><b>A Telegram Bot To Create Cool Logos, Powered By TechZBots API.</b></h4>
