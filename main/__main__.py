@@ -117,13 +117,7 @@ async def logo(bot, message):
 )
 async def logo(bot, message):
     try:
-        text = (
-            message.text.replace("logosq", "")
-            .replace("/", "")
-            .replace("@TechZLogoMakerBot", "")
-            .strip()
-            .upper()
-        )
+        text = (" ".join(message.text.split(" ")[1:])).strip()
 
         if text == "":
             return await message.reply_text(HELP)
